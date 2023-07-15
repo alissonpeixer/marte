@@ -5,8 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PoModule } from '@po-ui/ng-components';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
+
+
+const routes: Routes = [
+  
+];
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +24,7 @@ import { PoTemplatesModule } from '@po-ui/ng-templates';
     AppRoutingModule,
     PoModule,
     HttpClientModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot(routes),
     PoTemplatesModule
   ],
   providers: [],
