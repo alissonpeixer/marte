@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@po-ui/style/css/po-theme-default.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -87,6 +88,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@po-ui/style/css/po-theme-default.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "17a51e9a-ba16-45b7-acdd-14deb9d427dd"
   }
 }
