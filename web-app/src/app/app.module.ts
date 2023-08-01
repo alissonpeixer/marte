@@ -7,17 +7,19 @@ import { PoModule } from '@po-ui/ng-components';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  
+  { path: 'login', component: LoginComponent, data: { permissao: [] } },
 ];
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
