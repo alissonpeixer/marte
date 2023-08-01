@@ -8,19 +8,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth/auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, data: { permissao: [] } },
+  { path: 'dashboard', component: DashboardComponent, data: { permissao: [] } }
 ];
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
