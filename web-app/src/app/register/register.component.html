@@ -1,1 +1,54 @@
-<po-page-default p-title="PO Page Default"> </po-page-default>
+<po-page-default p-title="Cadastrar - Novo Usuário">
+  <form #formCadastro="ngForm">
+    <div class="po-row">
+      <po-input
+        class="po-md-6"
+        p-label="Nome"
+        name="nome"
+        [(ngModel)]="dados.nome"
+        required
+      >
+      </po-input>
+      <po-input
+        class="po-md-6"
+        p-label="Sobrenome"
+        name="sobrenome"
+        [(ngModel)]="dados.sobrenome"
+        required
+      >
+      </po-input>
+    </div>
+    <div class="po-row">
+      <po-input
+        class="po-md-4"
+        p-label="Username"
+        name="username"
+        [(ngModel)]="dados.username"
+        required
+      >
+      </po-input>
+      <po-email
+      class="po-md-4"
+        p-label="E-mail"
+        name="email"
+        [(ngModel)]="dados.email"
+        required
+      >
+      </po-email>
+      <po-password
+        class="po-md-4"
+        p-label="Senha"
+        name="password"
+        [(ngModel)]="dados.password"
+        required
+      >
+      </po-password>
+      <po-button
+        class="po-md-12"
+        p-label="Cadastrar-se"
+        (p-click)="cadastrar()"
+      >
+      </po-button>
+    </div>
+  </form>
+</po-page-default>

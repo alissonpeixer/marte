@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PoPageAction } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
+  public readonly actions: Array<PoPageAction> = [
+    {
+      label: 'Novo',
+      // action: alert("SALVE"),
+      // disabled: false,
+    },
+  ];
 }

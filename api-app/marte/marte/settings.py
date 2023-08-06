@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'marte_api',
 ]
 
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'marte.urls'
@@ -74,6 +77,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'marte.wsgi.application'
 
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4200',
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

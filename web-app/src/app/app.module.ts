@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, data: { permissao: [] } },
+  { path: 'singup', component: RegisterComponent, data: { permissao: [] } },
   { path: 'dashboard', component: DashboardComponent, data: { permissao: [] } }
 ];
 
@@ -33,7 +35,8 @@ const routes: Routes = [
     PoModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    PoTemplatesModule
+    PoTemplatesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

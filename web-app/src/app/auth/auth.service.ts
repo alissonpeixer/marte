@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+interface ResItem {
+  username: string;
+  password: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,18 +17,21 @@ export class AuthService {
   ) { }
 
   async login(username: string, password: string): Promise<boolean> {
-    // return this.http.post('/api/login', { username, password }).toPromise()
-    //   .then((response: any) => {
-    //     this.isAuthenticated = true;
-    //     return true;
-    //   })
-    // .catch(() => false);
+    return this.http.get('http://aspx.site:7777/users/').toPromise()
+      .then((res: any) => {
+        return res.results.some((item : ResItem)=>item.password === password && item.username  === username);
+      })
+    .catch(() => false);
+  }
 
-    if(username === 'a' && password === 'a'){
-      return Promise.resolve(true);
-    } else {
-      return Promise.resolve(false);
-    }
+
+  async singUP(username: string, password: string): Promise<boolean> {
+    console.log(username, password)
+    return this.http.post('http://aspx.site:7777/users/', {username,password}).toPromise()
+      .then((res: any) => {
+        return username === res.username && password === res.password ? true : false;
+      })
+    .catch(() => false);
   }
 
   logout(): void {
