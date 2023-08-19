@@ -11,6 +11,10 @@ $ npm i  --legacy-peer-deps
 $ ng serve
 ```
 
+
+#### OBS Fix to erro `ENOSPC`
+`sudo sysctl fs.inotify.max_user_watches=524288`
+
 #### Depedencie 
 Node >= 16 | AngularCli 15
 ___
